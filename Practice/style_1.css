@@ -1,0 +1,29 @@
+.city{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color:blue
+    
+}
+
+    .psize{
+    width: 350px; height: 350px;
+    margin: 0px;
+    
+}
+.title1{
+    background-color: aquamarine;
+    margin: 0px;
+}
+
+.des{
+    text-align: left;
+    margin: 0px;
+}
+
+.butt{
+  
+    background-color: aqua;
+    text-align: left;
+    cursor: pointer;
+    margin-left: 0%;
+}
