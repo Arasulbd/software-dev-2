@@ -1,0 +1,18 @@
+header{
+    text-align: right;
+    box-shadow: 0 4x 6px lemonchiffon;
+}
+
+.titlehead{
+    
+    padding:15px, 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: blue;
+    width: 80%;
+   
+}
+.headimage{
+    width: 20%;
+    align-items: left;
+}
