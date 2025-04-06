@@ -22,3 +22,18 @@ header{
    max-width: 100%;
    height: auto;
 }
+
+/*------*/
+
+.exercisecontainer{
+    height:200px ;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.img1, .img2, .img3{
+    width: 30%;
+    height:500px ;
+    border: solid gray 1px;
+}
