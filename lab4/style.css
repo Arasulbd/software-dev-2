@@ -143,3 +143,166 @@ figcaption{margin-bottom: 50px;}
     background-color: crimson;
     text-decoration: underline;
 }
+
+
+.navbar{
+    
+    width: 300px;
+
+}
+.navbar1{list-style-type: none;}
+
+.navbar li a{
+    background-color: purple;
+    color: aliceblue;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.navbar li a:hover{
+    background-color: lightcyan;
+    color: purple;
+    text-decoration: underline;
+    font-weight: 900;
+    border: 1px solid purple;
+
+}
+html{scroll-behavior: smooth;}
+
+.navbarhorizontal{
+    background-color: bisque;
+}
+.navbarhorizontal a{
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
+    width: 24.5%;
+    text-align: center;
+    padding: 20px;
+    
+
+}
+.navbarhorizontal a:hover{
+    background-color: aqua;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.rgbcontainer{
+    border: solid gray;
+    display: flex;
+    justify-content: space-around;
+    width: 400;
+    padding: 20%;
+}
+.rgbcontainer, div{
+    border: solid green 1px;
+    width: 100px;
+    height: 50px;
+}
+.rgbcontainer div:nth-child(1){background-color: rgb(30, 110, 10);}
+.rgbcontainer div:nth-child(2){background-color: rgb(190, 20, 150);}
+.rgbcontainer div:nth-child(3){background-color: rgb(10, 40, 210);}
+.hexcontainer div:nth-child(1){background-color: rgb#d2441e;}
+.hexcontainer div:nth-child(2){background-color: rgb#1ada9477;}
+.hexcontainer div:nth-child(3){background-color: rgb #da1a1a77;}
+
+
+.imgcontainer{
+    width: 50%;
+    box-shadow: 2px 2px 5px red;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 20px;
+    left: 100px;
+}
+.imgtitle{
+    background-color: #d2441e;
+    position: absolute;
+    top: 50px;
+   
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+.fixedtabs{
+    position: fixed;
+    
+    width: 100%;
+    top: 0%;
+}
+
+.imgbackground, .imgbackground2{
+    display: flex;
+    justify-content: space-around;
+
+}
+.imgbackground div, .imgbackground2 div{
+    width: 30%;
+    height: 200%;
+    border: solid gray 1px;
+
+}
+.imgbackground div:nth-child(1){
+    background-image:linear-gradient(red, darkblue) ;}
+.imgbackground div:nth-child(2){
+    background-image:linear-gradient(red, darkblue) ;}
+.imgbackground div:nth-child(3){
+    background-image:linear-gradient(red, darkblue) ;}
+
+.imgbackground2 div:nth-child(1){
+    background-image:linear-gradient(red, darkblue) ;}
+.imgbackground2 div:nth-child(2){
+    background-image:linear-gradient(red, darkblue) ;}
+.imgbackground2 div:nth-child(3){
+    background-image:linear-gradient(red, darkblue) ;}
+
+    /* hero image*/
+
+    .heroimgcontainer{
+        width: 800px;
+        height: 500px;
+        margin: auto;
+        border: solid gray;
+        background-image:url(images/imag1.jpg) ;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+
+    }
+    .herocontent{
+        background-color: rgba(50,50,50,.8);
+        position: absolute;
+        top:30%;
+        left:10%;
+        right:10%;
+        color:white;
+        border-radius: 10%;
+        box-shadow: 1px 1px 5px black;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5em;
+    }
+    .herocontent_title{
+        color: rgba(220,200, 200,0.9);
+    }
+    .herocontent_intro{
+        margin-top: -30px;
+        font-size: .8em;
+        font-style: italic;
+    }
+    .herocontent_link{
+        background-color: darkblue;
+        color: white;
+        display: block;
+        padding: 1em;
+        text-decoration: none;
+    }
+    .herocontent_link:hover{
+        background-color: rgba(220,200, 200,0.9);
+        color: crimson;
+        font-weight: bolder;
+    }
+    

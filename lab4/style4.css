@@ -1,11 +1,13 @@
 header{
     text-align: right;
-    box-shadow: 0 4x 6px lemonchiffon;
+    box-shadow: 0 2x 2px lemonchiffon;
+    padding: 10px 15px;
+    display: flex;
+    background-color: white;
 }
 
 .titlehead{
-    
-    padding:15px, 20px;
+
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 14px;
     color: blue;
@@ -15,4 +17,8 @@ header{
 .headimage{
     width: 20%;
     align-items: left;
+}
+.headimage img{
+   max-width: 100%;
+   height: auto;
 }
