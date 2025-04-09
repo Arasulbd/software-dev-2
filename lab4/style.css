@@ -12,20 +12,9 @@
     height: 100px;
     background-color: aqua;
     margin: 20px;
-}
-.Shadowbox1{
-    box-shadow: 0px 5px 3px red;
-}
-.Shadowbox2{
-    box-shadow: 5px 5px 3px red;
-}
-.Shadowbox3{
-    box-shadow: 2px 2px 4px red;
+    padding: 20px;
 }
 
-.Shadowbox4{box-shadow: 2px 2px 4px red inset;}
-
-.Shadowbox5{box-shadow: 0px 0px 5px 10px olive;}
 
 .radiousbox1, .radiousbox2, .radiousbox3, .radiousbox4, .radiousbox5{
     width: 150px;
@@ -83,14 +72,15 @@ figcaption{margin-bottom: 50px;}
 }
 /* card */
 .cardcontainer{
-    width: 600px;
-    margin: auto;
+    width: 800px;
+    margin: 10px;
     background-color:aliceblue;
     padding: 20%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .card{
     width: 40%;
     border-radius: 10px;
@@ -98,16 +88,29 @@ figcaption{margin-bottom: 50px;}
     overflow: hidden;
     background-color: white;
 }
+.imgcard{
+    width: 100%;
+}
+.card1, .card2, .card3{
+    height: 218px;
+}
+
+.card4{
+    height: 322px;
+}
+
 .linkcard{
     text-align: center;
     display: block;
     color:blue;
     text-decoration: none;
     padding: 1em;
+    background-color: white;
 }
 .card:hover{
     box-shadow: 0px 0px 5px 2px gray;
     border: none;
+    transform: translate(0px, -10px);
 }
 .card:hover .linkcard{
     color:crimson;
@@ -117,7 +120,7 @@ figcaption{margin-bottom: 50px;}
     width:30%;
     border-radius: 10px;
     overflow: hidden;
-    margin: .1%;
+    margin: 2%;
     box-shadow: 1px 1px 3px gray;
 }
 .cardtitle{
@@ -137,6 +140,7 @@ figcaption{margin-bottom: 50px;}
 }
 .card2:hover{
     box-shadow: 0px 0px 3px 1px gray ;
+    text-decoration: underline;
     
 }
 .card2:hover .linkcard2{
@@ -146,11 +150,11 @@ figcaption{margin-bottom: 50px;}
 
 
 .navbar{
-    
+    background-color: purple;
     width: 300px;
 
 }
-.navbar1{list-style-type: none;}
+.navbar li {list-style-type: none;}
 
 .navbar li a{
     background-color: purple;
@@ -246,18 +250,18 @@ html{scroll-behavior: smooth;}
 
 }
 .imgbackground div:nth-child(1){
-    background-image:linear-gradient(red, darkblue) ;}
+    background-image:none ;}
 .imgbackground div:nth-child(2){
-    background-image:linear-gradient(red, darkblue) ;}
+    background-image:none ;}
 .imgbackground div:nth-child(3){
-    background-image:linear-gradient(red, darkblue) ;}
+    background-image:none ;}
 
 .imgbackground2 div:nth-child(1){
-    background-image:linear-gradient(red, darkblue) ;}
+    background-image:none;}
 .imgbackground2 div:nth-child(2){
-    background-image:linear-gradient(red, darkblue) ;}
+    background-image:none ;}
 .imgbackground2 div:nth-child(3){
-    background-image:linear-gradient(red, darkblue) ;}
+    background-image:none ;}
 
     /* hero image*/
 

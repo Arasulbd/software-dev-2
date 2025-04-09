@@ -1,0 +1,52 @@
+
+.maincarcontainer{
+    width: 1000px;
+    margin: 15px;
+    display: flex;
+   }
+
+.card{
+    width:300px;
+    border: solid 1px gray;
+    border-radius: 10%;
+    overflow: hidden;
+    margin: 10px;
+     
+}
+.cardimg{
+    width: 100%;
+    width: 100%;
+    display: flex;
+ 
+}
+.cardlink{
+    text-align: center;
+    padding: 1em;
+    color: olive;
+    display: block;
+    text-decoration: none;
+    font-size: 1em;
+}
+.card:hover{
+    box-shadow: 0px 0px 5px 2px gray;
+}
+.card:hover .cardintro{
+    font-weight: 200;
+    color: rgb(25, 0, 255);
+}
+.cardintro{
+    text-align: center;
+    color: brown;
+}
+.footnotelink{
+    color: blue;
+    background-color: rgb(232, 199, 199);
+    text-align: center;
+    padding: 10px;
+    display: block;
+   }
+
+.card:hover .footnotelink{
+    font-weight: 900;
+    background-color: crimson;
+   }

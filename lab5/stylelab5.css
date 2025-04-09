@@ -61,3 +61,104 @@ img{width: 100%; display: block;}
     box-shadow: 0px 3ps 5px black;
 
   }
+
+  /* flex container*/
+  .flexcontainer{
+
+    background-color: lightsalmon;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+    
+  }
+  /* grid layout*/
+  .gridcontainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr 5fr 1fr;
+    grid-template-rows: 3fr 1fr 4fr;
+    gap: 10px;
+    background-color: antiquewhite;
+    height: 500px;
+    
+  }
+  .item{
+    background-color: aqua;
+    text-align: center;
+    padding: 20px;
+    border: 1px saddlebrown;
+  }
+
+  .gridsection{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+.sectioncontainer{
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "sidebar sidebar sidebar"
+    "footer footer footer";
+    }
+    .header, .sidebar, .content, .footer{
+        padding: 2em;
+        text-align: center;
+    }
+    .header{
+        background-color:aqua ;
+        grid-area: header;
+
+    }
+    .sidebar{
+        background-color: blueviolet ;
+        
+    }
+.content{
+    background-color: greenyellow ;
+    grid-area: content;
+}
+.footer{
+    background-color: pink;
+    grid-area: footer;
+}
+
+/* media*/
+@media only screen and (max-width:1150px) {
+    .flexcontainer{background-color: aqua;}
+    .cardslide{width: 80%;}
+
+    .gridcontainer{
+    grid-template-columns: 3fr 2fr ;
+    grid-template-rows: 3fr 1fr 4fr;
+    }
+}
+@media only screen and (max-width: 800px){
+    .flexcontainer{background-color: purple;}
+    .cardslide{width: 90%; margin: 5%;}
+    .gridcontainer{grid-template-columns: 1fr;}
+    .collapsnavbars{display: inline;}
+
+}
+
+.navcontainer{
+    position: fixed;
+    top: 0%;
+    background-color: rgb(255, 150, 127);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    }
+    .navlink{
+        text-align: center;
+        padding: 1rem;
+        display: inline-block;
+        color: white;
+
+    }
+    .collapsnavbars{
+        display: none;
+        padding: 1rem;
+        color: aliceblue;
+
+    }
