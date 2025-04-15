@@ -12,7 +12,27 @@
     height: 100px;
     background-color: aqua;
     margin: 20px;
-    padding: 20px;
+    
+}
+
+.Shadowbox1 {
+    box-shadow: 0px 5px 3px red;
+}
+
+.Shadowbox2 {
+    box-shadow: 5px -5px 3px red;
+}
+
+.Shadowbox3 {
+    box-shadow: 2px 2px 4px red;
+}
+
+.Shadowbox4 {
+    box-shadow: 2px 2px 4px red inset;
+}
+
+.Shadowbox5 {
+    box-shadow: 0px 0px 5px 10px olive;
 }
 
 
@@ -72,32 +92,28 @@ figcaption{margin-bottom: 50px;}
 }
 /* card */
 .cardcontainer{
-    width: 800px;
-    margin: 10px;
+    /* width: 800px; */
+    /* height: 800px; */
+    background-color: blue;
+    margin: auto;
     background-color:aliceblue;
     padding: 20%;
     display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .card{
-    width: 40%;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
     border-radius: 10px;
     border: solid 2px lightgrey;
     overflow: hidden;
     background-color: white;
 }
-.imgcard{
-    width: 100%;
-}
-.card1, .card2, .card3{
-    height: 218px;
-}
 
-.card4{
-    height: 322px;
-}
 
 .linkcard{
     text-align: center;
@@ -105,7 +121,7 @@ figcaption{margin-bottom: 50px;}
     color:blue;
     text-decoration: none;
     padding: 1em;
-    background-color: white;
+    
 }
 .card:hover{
     box-shadow: 0px 0px 5px 2px gray;
@@ -114,6 +130,10 @@ figcaption{margin-bottom: 50px;}
 }
 .card:hover .linkcard{
     color:crimson;
+}
+
+.card:hover cardinfo{
+    color:blue;
 }
 
 .card2{
@@ -213,7 +233,8 @@ html{scroll-behavior: smooth;}
 
 
 .imgcontainer{
-    width: 50%;
+    width: 400px;
+    height: 400px;
     box-shadow: 2px 2px 5px red;
     border-radius: 10px;
     overflow: hidden;
@@ -262,6 +283,7 @@ html{scroll-behavior: smooth;}
     background-image:none ;}
 .imgbackground2 div:nth-child(3){
     background-image:none ;}
+
 
     /* hero image*/
 

@@ -27,6 +27,7 @@
   width: 100%;
   height: 100%;
   filter: blur(2px);
+  
 }
 
 .img3 {
@@ -63,7 +64,7 @@
   height: 130px;
   background-color: rgb(222, 211, 211);
   position: absolute;
-  inset: 200px 50px 20px 15px;
+  inset: 200px 50px 10px 15px;
   border: 2px solid white;
   box-shadow: 2px 2px 0px 0px rgb(red, green, blue);
   box-sizing: 10px;
@@ -89,7 +90,7 @@
 .linkpicture2 {
   color: rgb(42, 165, 116);
   text-align: center;
-  display: block;
+  display: flex;
   margin: 5px;
   padding: 3px;
   font-size: 20px;
