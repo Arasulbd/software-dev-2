@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project1: Tranche Management Inc.</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="projectstyle.css" />
+
+    <style>
+      /* Add enough top padding so content isn't hidden under the fixed navbar */
+      body {
+        padding-top: 100px; /* Adjust based on navbar height */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar Section -->
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg p-3 fixed-top" style="background-color: rgb(229, 249, 213);">
+  <a href="#" class="navbar-brand p-3">
+    <img src="logo/logo1.png" alt="logo of a company" width="70" />
+  </a>
+  <h1 class="ps-5 mb-0" style="color: #1a3e1a;">Tranche Management Inc.</h1>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapsemenu"
+  >
+    <span>Menu</span>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsemenu">
+    <nav class="navbar-nav ms-auto">
+      <a href="home.html" class="nav-item nav-link ms-3" style="color: #1a3e1a;">Home</a>
+      <a href="service.html" class="nav-item nav-link ms-3" style="color: #1a3e1a;">Services</a>
+      <a href="portfolio.html" class="nav-item nav-link ms-3" style="color: #1a3e1a;">Portfolio</a>
+      <a href="contact.html" class="nav-item nav-link ms-3" style="color: #1a3e1a;">Contact</a>
+    </nav>
+  </div>
+</nav>
+
+
+
+    <!-- Carousel Section -->
+    <section
+      id="imgcarousel"
+      class="carousel slide w-50 mx-auto mt-5"
+      data-bs-ride="carousel"
+      data-bs-interval="2000"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="logo/cr1.jpg" class="d-block w-100" alt="Jogging in the park" />
+          <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
+            <p class="h3 text-primary">Jogging in the park</p>
+            <p>A great way to clear your mind</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="logo/cr2.jpg" class="d-block w-100" alt="Taking a break" />
+          <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
+            <p class="h3 text-primary">Taking a break</p>
+            <p>Incredible adventure that</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="logo/cr3.jpg" class="d-block w-100" alt="Enjoy nature" />
+          <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
+            <p class="h3 text-primary">Taking a break</p>
+            <p>Enjoy nature with friends</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#imgcarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#imgcarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" class="active" data-bs-target="#imgcarousel" data-bs-slide-to="0"></button>
+        <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="2"></button>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+<section class="py-5" style="background-color: rgb(229, 249, 213);">
+  <div class="container text-center">
+    <h2 class="fw-bold text-primary mb-5">SERVICES WE PROVIDE</h2>
+    <div class="row g-4">
+      
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="image-hover-container">
+            <img src="logo/cr3.jpg" class="card-img-top" alt="Cost Estimate">
+            <div class="image-hover-links">
+              <a href="#link1">View for details</a>
+              <a href="#link2">View for details</a>
+            </div>
+          </div>
+      
+          
+   
+    </div>
+
+    <!-- View All Button -->
+    <div class="mt-4">
+      <a href="#" class="btn btn-primary px-4">View All</a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

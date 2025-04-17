@@ -1,0 +1,56 @@
+
+
+
+:root{
+   --primarycolor: rgb(20, 80, 10);
+   --primarylightcolor: rgb(229, 249, 213);
+   --secondaycolor:rgb(229, 249, 213);
+}
+.containerbg{
+    background-color: var(--primarycolor)!important;
+    color: var(--secondaycolor);
+    
+
+}
+.container{
+    background-color: rgb(229, 249, 213) !important;
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: blue !important;
+}
+
+.image-hover-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .image-hover-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-hover-links {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+   .image-hover-links a {
+    padding: 6px 12px;
+    background-color: rgba(226, 13, 13, 0.7);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .image-hover-links a:hover {
+    background-color: #f5b342;
+    color: #000;
+  }
