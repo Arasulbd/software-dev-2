@@ -24,6 +24,7 @@ h1{
 .image-hover-container {
     position: relative;
     overflow: hidden;
+    
   }
 
   .image-hover-container img {
