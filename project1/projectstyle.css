@@ -24,13 +24,24 @@ h1{
 .image-hover-container {
     position: relative;
     overflow: hidden;
+    width: 400px;
+    margin: 20px;
     
   }
 
   .image-hover-container img {
-    display: block;
+    display: flex;
     width: 100%;
     height: auto;
+  }
+  .image_title {
+    position: absolute;
+    inset: 10px 10px auto 10px; /* top, right, bottom, left */
+    color: #e70c0c;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    
   }
 
   .image-hover-links {
@@ -41,6 +52,10 @@ h1{
     gap: 10px;
     text-align: center;
   }
+  .image-hover-container:hover .image-hover-links {
+    display: flex;
+  }
+
 
    .image-hover-links a {
     padding: 6px 12px;
@@ -48,7 +63,7 @@ h1{
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    
   }
 
   .image-hover-links a:hover {
