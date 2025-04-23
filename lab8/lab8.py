@@ -141,6 +141,106 @@ print("\n------Example-12: total charecter len method ------")
 
 print(f"the user name has ={len(username1)} charecters")
 
+print("\n------Example-13: String method ------")
+
+username = " peterpan123  "
+print(f"the username ={username}. End of username")
+username=username.strip
+print(f"the username after method strip ={username}. End of username")
+
+print("\n------Example-14: String method ------")
+
+username = username.lower()
+print(f"The username after method lower = {username}. End of username")
+username = username.upper()
+print(f"The username after method upper = {username}. End of username")
+
+print("\n------Example-15: replace method ------")
+
+username = username.replace('p', '%')
+print(f"the username after method replace ={username}. End of username")
 
 
-      
+print("\n------Example-16: Split method ------")
+
+msg="introdunction to phython programiming today we are learning string methid"
+print(f"messege={msg}")
+msg=msg.split()
+print(f"messge after method ={msg}")
+
+
+print("\n------Example-17: find method ------")
+index_p = msg.find('p')
+print(f"index of letter p is={index_p}")
+sec_index_p = msg.find('p',index_p+1)
+print(f"Next index letter of P is ={sec_index_p}")
+
+#find a non exixting letter
+index_y = msg.find('y')
+print(f"the index letter of y is ={index_y}")
+
+print("\n------Example-18:in not in statement  ------")
+
+answer_we = "we " in msg 
+print(f"is the word 'we in the msg sting? = {answer_we}")
+answer_today = "Today" not in msg
+print(f"is the word 'Today ' not  in the msg sting? = {answer_today}")
+
+print("\n------Example-19:list indexing  ------")
+colors=["orange", "megenta", "olive"]
+numbers=["2", "12", "30"]
+fixedlist=[False,20 , "peter"]
+
+emptylist=[]
+
+print(f"cplors list={colors}")
+
+
+print("\n------Example-20:+ * operator on list------")
+
+new_color=colors[0]+colors[-1]
+print(f"the new color is + {new_color}")
+# contenicate with 2nd and 3rd color
+#new_word=colors[1]+numbers[2] data type error
+
+
+print("\n------Example-21:remove item from  list------")
+
+colors.pop(-1)
+print(f"colors after pops ={colors}")
+
+print("\n------Example-21:Add item to the list------")
+# add item to the end of list color
+colors.append("pink")
+print("colors after append ={colors}")
+#add a new list to a list
+#colors.append(["blue", ["green"]])
+#print(f"colors aftert apprnd {colors}")
+#colors.append("red","purple")
+#print(f"colors aftert apprnd {colors}")
+
+print("\n------Example-22:Add item to the list------")
+
+print(f"Mixed list ={colors}")
+colors.sort()
+print(f"colors list shorted ={colors}")
+
+bool_list=[True, False, True]
+bool_list.sort()
+print(f"bool list shorted= {bool_list}")
+
+print("\n------Example-24:count method------")
+count_true=bool_list.count(True)
+print(f"thre is {count_true} True values")
+count_red=colors.count("red")
+print(f"thre is {count_red} red colors")
+
+print("\n------Example-25:Length of list------")
+length_colors=len(colors)
+print(f"there is /are {length_colors} colors")
+
+print("\n------Example-26:index of a item in the list------")
+# index of color olive
+index_olive=colors.index("olive")
+print(f" the index of color of olive is {index_olive}")
+
