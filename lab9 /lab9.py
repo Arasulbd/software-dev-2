@@ -79,3 +79,21 @@ match respnse_code:
         print(f"{respnse_code} response code not found")
     case _:
         print(f"INVALID CODE")
+
+print("\n------Exercise ------")
+
+grade_1=float(input ("Enter the grade1:"))
+grade_2=float(input("Enter the grade 2:"))
+#calculate the average
+average=(grade_1+grade_2)/2
+if 90<= average <=100:
+       print(f"your average GPA is {average}, Your grade is A") 
+elif 70<= average <=89.99:
+       print(f"your average GPA is {average}, Your grade is B") 
+elif 60<= average<=69.99:
+        print(f"your average GPA is {average}, Your grade is C") 
+elif 50<= average<=59.99:
+       print(f"your average GPA is {average}, Your grade is D")  
+else:
+        GPA="Undefined "
+
