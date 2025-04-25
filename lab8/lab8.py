@@ -244,3 +244,5 @@ print("\n------Example-26:index of a item in the list------")
 index_olive=colors.index("olive")
 print(f" the index of color of olive is {index_olive}")
 
+
+
