@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<a href="project1.html">Go to Home page</a>, initial-scale=1.0">
-    <title>Contact</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project1: Tranche Management Inc.</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="projectstyle.css" />
+
+    <style>
+      /* Add enough top padding so content isn't hidden under the fixed navbar */
+      body {
+        padding-top: 100px; /* Adjust based on navbar height */
+      }
+    </style>
 </head>
 <body>
-    
-    <a href="project1.html">Go to Home page</a>
-</body>
-</html>
+
+  <!-- Navbar Section -->
+  <nav
+  class="navbar navbar-expand-lg p-3 fixed-top"
+  style="background-color: rgb(229, 249, 213)"
+>
+  <a href="#" class="navbar-brand p-3">
+    <img src="logo/logo1.png" alt="logo of a company" width="70" />
+  </a>
+  <h1 class="ps-5 mb-0" style="color: #1a3e1a">Tranche Management Inc.</h1>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapsemenu"
+  >
+    <span>Menu</span>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsemenu">
+    <nav class="navbar-nav ms-auto">
+      <a
+        href="home.html"
+        class="nav-item nav-link ms-3"
+        style="color: #1a3e1a"
+        >Home</a
+      >
+      <a
+        href="service.html"
+        class="nav-item nav-link ms-3"
+        style="color: #1a3e1a"
+        >Services</a
+      >
+      <a
+        href="portfolio.html"
+        class="nav-item nav-link ms-3"
+        style="color: #1a3e1a"
+        >Portfolio</a
+      >
+      <a
+        href="contact.html"
+        class="nav-item nav-link ms-3"
+        style="color: #1a3e1a"
+        >Contact</a
+      >
+    </nav>
+  </div>
+</nav>
+
+<section>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card shadow p-4" style="background-color: rgb(229, 249, 213);">
+              <h2 class="text-center mb-4">Contact Us</h2>
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="subject" placeholder="Enter subject">
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Type your message here" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+<footer class="text-center py-4" style="background-color: #f8f9fa;">
+    <p>Copyright © TML</p>
+    <div class="left_fi">
+      <ul class="list-unstyled d-flex justify-content-center gap-4">
+        <li><a href="#" rel="noopener noreferrer" target="_blank" title="Link to Facebook page">Facebook</a></li>
+        <li><a href="#" rel="noopener noreferrer" target="_blank" title="Link to Twitter page">Twitter</a></li>
+        <li><a href="#" rel="noopener noreferrer" target="_blank" title="Link to TikTok page">TikTok</a></li>
+      </ul>
+    </div>
+  </footer>
