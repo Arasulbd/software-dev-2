@@ -118,32 +118,3 @@ while index<len_numbers:
 else:
     print(f"there are {evencount} even numbers")
     
-
-
-print("\n------exercise Lab 10:  loop -------")
-
-print ('\n ------ Lab10 Exercise   ------')
-
-colors = ['red', 'orange', 'olive', 'magenta', 'green']
-color_match = False
-
-check_color = input("Enter a color to check: ").strip().lower()
-
-for color in colors:
-    if check_color == color:
-        color_match = True
-        print(f"{check_color} color is in the list")
-        break
-else:
-    print(f"{check_color} color iS not in the list")
-
-colors = ['red','orange','olive','magenta','green']
-user_selection = input("Enter a color: ").lower().strip()
-
-for color in colors:
-    if user_selection in colors:
-        print(f"{user_selection} is in the list")
-        break
-    else:
-        print(f"{user_selection} is NOT in the list")
-        break
