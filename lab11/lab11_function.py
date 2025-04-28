@@ -95,7 +95,7 @@ class complexnumber():
         self.i=imgnumber
    
 # Example 13 
-class car:
+class Car:
     #instantiate of the class
     def __init__(self, make, model,year):
         self.carmake=make
@@ -117,8 +117,8 @@ class car:
             print('odometer can \'T roll back')
 
 # add to miles to odometer
-def increment_odometer(self, miles):
-    if miles>0: 
-        self.odometer_reading+=miles
-    else:
-        print("cant find negative miles")
+    def increment_odometer(self, miles):
+        if miles>0: 
+            self.odometer_reading += miles
+        else:
+            print("cant find negative miles")

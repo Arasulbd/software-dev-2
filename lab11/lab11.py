@@ -2,7 +2,7 @@
 Student's full name: Aminur Rasul
 April 25, Loop
 """
-from lab11_function import *  # Import all functions correctly
+from lab11_function import *  # Import all functions from file : lab22_function
 import math
 
 print("\n------ Example 1: Python Dictionary ------")
@@ -13,12 +13,14 @@ car = {
 }
 print(car)
 
+# to accesss the item in disctionery we use []
 print(f"The year of the car is = {car['year']}")
-
+# update value of the car
 car["year"] = 1980
+
 print(f"The year of the car updated to {car['year']}")
 print(f"The year of the car updated to = {car['year']}")
-
+# add car value pair
 car["color"] = "red"
 print(car)
 
@@ -35,18 +37,24 @@ for k in car:
     print(f"{k} has value {car[k]}")
 
 print("\n------ Example 2: Dictionary Application ------")
+#given the number of following list , creat a disctionery that will count the number of time that a words appear in the string
+#creat a disctionary to orgnize the words as the key and the number of occurency of the word in the value of the key
 phrase = "to be or not to be"
 print(f"Original phrase = {phrase}")
 
 phrase_split = phrase.split()
 print(f"Split phrase = {phrase_split}")
 
+# creat the disctionary
+
 word_count_dict = {}
 for word in phrase_split:
+    # loop toeach word in the list
     if word in word_count_dict:
         word_count_dict[word] += 1
     else:
         word_count_dict[word] = 1
+        # print the result
 
 print("Resulting dictionary:")
 for w in word_count_dict:
@@ -113,7 +121,7 @@ print(f"The real part is {real}")
 print("\n------ Example 13: Instan of the  Class------")
 
 # instant of the class
-car1=car("Tesla","S",2023)
+car1=Car("Tesla","S",2023)
 # call property, odometer_reading
 car_reading = car1.odometer_reading
 print(f"car miles reading={car_reading} ")
@@ -127,3 +135,10 @@ print(car1.read_odometer())
 car1.update_odometer(5)
 print(car1.read_odometer())
 
+# update to odometer to milage to 20
+car1.increment_odometer(20)
+print(car1.read_odometer())
+car1.increment_odometer (-5)
+print(car1.read_odometer())
+car1.increment_odometer(8)
+print(car1.read_odometer())
