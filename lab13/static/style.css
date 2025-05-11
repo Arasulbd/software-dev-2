@@ -1,0 +1,6 @@
+img{width: 100%; display: block;}
+.title{text-align: center; color: blue;}
+.introimgcontainer, .maincontainer{
+    width: 700px;
+    margin: 2em auto;
+}

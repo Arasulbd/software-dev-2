@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flash app</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <h1 class="title">Welcome to Flask!{{username}}</h1>
+    <figure class="introimgcontainer">
+      <img src="../static/PIC_10.jpg" class="introimg" />
+    </figure>
+
+    <section class="maincontainer">
+      <ul>
+            {for eachfruit in listfruits }
+            <li>{{eachfruit}}</li>
+
+        { % for each fruits in listfruits % } {{eachfruits}} {% endfor %}
+      </ul>
+            {% if checkfruit in listfruits%}
+      <p>Great We have {{checkfruit}}</p>
+            {% endfor %}
+      <p>{{checkfruit}} is not in the list</p>
+      {% endif%}
+    </section>
+
+    <h2>HTTP Request</h2>
+    <form method="POST">
+      <input type="password" name="password"/>
+      <input type="submit"/>
+    </form>
+    <h2><a href={{url_for("Users")}}>add employee</a></h2>
+  </body>
+</html>
