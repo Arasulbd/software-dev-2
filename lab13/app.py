@@ -43,12 +43,13 @@ def about():
 @app.route('/users', method=['GET', 'POST'])
 def users():
     if request.method=='POST':
-        form=request.form
-        emp_name=form['employee_name']
-        emp_id=form['employee_id']
+        try:
+            form=request.form
+            emp_name=form['employee_name']
+            emp_id=form['employee_id']
 
-        existing_employee=Employee.query.filter_by(employee_name=emp_name).first() #bollean (treue, false)
-        existing_id=Employee.query.filter_by(emp_id=emp_id).first()#boolean true and falsr
+            existing_employee=Employee.query.filter_by(employee_name=emp_name).first() #bollean (treue, false)
+            existing_id=Employee.query.filter_by(emp_id=emp_id).first()#boolean true and falsr
 
         if existing_employee :
             flash(f"Employee wiht name '{emp_name} already exists")
@@ -64,7 +65,7 @@ def users():
         db.session.commit()
         #messege
         flash request.form[employee_name] + 'successfully added!'
-    except:
+        except:
     flash("Fail to insert data Try again" )
 
     return render_template('users.html')
