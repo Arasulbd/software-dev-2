@@ -1,27 +1,29 @@
-{%extends 'base.html'%}
-{%block content%} Users {%endblock%}
-{%block msg%} User Cyber page {%endblock%}
-{%block content%}
+{% extends 'base.html' %}
 
-(% with messges=get_flashed_messge()%)
-    (%if messges %)
-    <ul class="informessege">
-        {% for m in messges%}
-        <li>{{m}}</li>
-        {%endfor%}
-    </ul>
-        
- 
-    {%endif%}
-{% endwith%}
+{% block title %}Users{% endblock %}
+{% block msg %}User Cyber page{% endblock %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="informessages">
+                {% for m in messages %}
+                    <li>{{ m }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
     <h2>Users in the list</h2>
     <form method="POST">
         <label for="name">Enter Employee name:</label>
-        <input type="text" name="employee_name" id="name"/>
-        <lavel for userid>Enter employee id:</lavel>
-        <input type="text" name="employee_id"/>
-        <button type="submit">Add New Employee</button>
+        <input type="text" name="employee_name" id="name" />
 
+        <label for="userid">Enter Employee ID:</label>
+        <input type="text" name="employee_id" id="userid" />
+
+        <button type="submit">Add New Employee</button>
     </form>
-    <p>New rmployee is {{sessoion['employee1']}}</p>
-{%endblock%}
+
+    <p>New employee is {{ session['employee1'] }}</p>
+{% endblock %}
