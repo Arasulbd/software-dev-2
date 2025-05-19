@@ -1,0 +1,105 @@
+.card-img {
+    height: 450px;
+    object-fit: cover;
+  }
+  .card {
+    height: 100%;
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .card-subtitle, .card-text {
+    font-size: 0.9rem;
+  }
+  .contacinfor{
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  .features ol li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .features ol li a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .features ol li a:hover {
+    text-decoration: underline;
+  }
+
+
+
+  /* registration.html*/
+.registration_form{
+  width: 600px;
+  background-color: aliceblue;
+  padding: 2rem;
+  margin: auto;
+  }
+  .registration_form legend{
+  color: var(--primarycolor);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  }
+  .form-group{
+  margin-bottom: 1.5rem;
+  }
+  .form-group label{
+  display: inline-block;
+  width: 18%;
+  }
+  .form-group input{
+  width: 70%;
+  padding: 0.5rem 0.3rem;
+  }
+  .btnsubmit{
+  background-color: rgb(50,50,50);
+  border: none;
+  box-shadow: 1px 1px 3px gray;
+  border-radius: 0.2rem;
+  width: 100%;
+  padding: 0.8rem;
+  color:whitesmoke;
+  font-size: 1.1rem;
+  max-height: 3rem;
+  }
+  .btnsubmit:hover{
+  background-color:var(--primarycolor);
+  border: solid 0.2rem rgb(50,50,50);
+  box-shadow: none;
+  cursor: pointer;
+  }
+
+  .fscontainer{
+    background-color: antiquewhite;
+  }
+
+  .navbar-custom{
+    background-color: #003366;
+  }
+
+  .navbar-custom .nav-link,
+  .navbar-custom .navbar-brand
+   {
+    color: #709610 !important;
+    font-size: 1.2rem;
+  }
+
+  .navbar-custom .nav-link:hover,
+  .navbar-custom .navbar-brand:hover {
+    color: #ffcc00 !important;
+  }
+
+
+  .feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .feature-box ul li a:hover {
+    text-decoration: underline;
+  }
+  

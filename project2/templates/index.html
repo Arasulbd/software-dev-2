@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% block title %}Home - My Shop{% endblock %}
+
+{% block content %}
+
+
+<main class="container mt-5">
+  <h2 class="text-center mb-4">Our Products</h2>
+
+  <section class="row justify-content-center">
+    <!-- Card 1 -->
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_1shirt.jpg') }}" class="card-img" alt="Stylish shirt">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Shirts</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Upgrade your wardrobe with the latest styles.</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_2tro.jpg') }}" class="card-img" alt="Trousers">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Trousers</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Straight-Leg Pleated Linen Trousers</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_3 shoe.jpg') }}" class="card-img" alt="Off Outfit">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Off Outfit</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Bold look for casual days.</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_4.jpg') }}" class="card-img" alt="Casual Coat">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Men's Casual Fashion Coat</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Stylish outerwear for any occasion.</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards 5 to 8) -->
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_5.jpg') }}" class="card-img" alt="Shirts">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Shirts</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Trendy everyday shirt.</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_6.jpg') }}" class="card-img" alt="Shirts">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Shirts</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Simple and stylish.</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_7.jpg') }}" class="card-img" alt="Shirts">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Shirts</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Great for any occasion.</p>
+            <p class="card-text">Price $200</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+      <div class="position-relative">
+        <img src="{{ url_for('static', filename='pic/pic_8.jpg') }}" class="card-img" alt="Shirts">
+        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div>
+            <h2 class="card-title text-danger">Shirts</h2>
+            <h6 class="card-subtitle">Awesome new arrivals</h6>
+            <p class="card-text">Elegant and modern.</p>
+            <p class="card-text">Price $260</p>
+          </div>
+          <form method="POST" action="{{ url_for('add_to_cart') }}">
+            <input type="hidden" name="product_id" value="1">
+            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+{% endblock %}
+
+
+
+
+
+
