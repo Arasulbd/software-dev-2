@@ -10,7 +10,7 @@
 {% block head %}{% endblock %}
 <body>
       <!-- Navbar Section -->
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand mx-auto fw-bold" href="{{ url_for('index') }}">MyShop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -60,7 +60,7 @@
   </nav>
   
 
-  {% block content %}
+  
   
   
   <h1 class="mt-5"></h1>
@@ -80,7 +80,7 @@
       </div>
     </section>
   </section>
-
+  {% block content %}
   <!-- Image Carousel -->
   <section
     id="imgcarousel"
@@ -95,33 +95,33 @@
           class="d-block w-100"
           alt="Summer Collection"
         />
-        <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
-          <p class="h3 text-primary"></p>
-          <p></p>
+        <div class="carousel-caption rounded" style="background-color: rgba(0, 0, 0, 0.6)">
+          <p class="h3 text-white">Elevate Your Everyday</p>
+          <p class="text-white">Premium trousers designed for comfort and confidence</p>
         </div>
       </div>
 
       <div class="carousel-item">
         <img src="{{ url_for('static', filename='pic/pic_1shirt.jpg') }}" class="d-block w-100" alt="Summer collection" />
-        <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
-          <p class="h3 text-primary"></p>
-          <p></p>
+        <div class="carousel-caption rounded" style="background-color: rgba(0, 0, 0, 0.6)">
+          <p class="h3 text-white">Fresh Looks for the Season</p>
+          <p class="text-white">Breathe new life into your wardrobe with our latest shirts</p>
         </div>
       </div>
 
       <div class="carousel-item">
         <img src="{{ url_for('static', filename='pic/pic_5.jpg') }}" class="d-block w-100" alt="Enjoy Summer" />
-        <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
-          <p class="h3 text-primary"></p>
-          <p></p>
+        <div class="carousel-caption rounded" style="background-color: rgba(0, 0, 0, 0.6)">
+          <p class="h3 text-white">Stylish Comfort</p>
+          <p class="text-white">Layer up with casual coats that never go out of fashion</p>
         </div>
       </div>
 
       <div class="carousel-item">
         <img src="{{ url_for('static', filename='pic/pic_6.jpg') }}" class="d-block w-100" alt="Enjoy Summer" />
-        <div class="carousel-caption rounded" style="background-color: rgba(200, 200, 200, 0.8)">
-          <p class="h3 text-primary">Summer Collection</p>
-          <p></p>
+        <div class="carousel-caption rounded" style="background-color: rgba(0, 0, 0, 0.6)">
+          <p class="h3 text-white">Your Smart Wardrobe</p>
+          <p class="text-white">Office-ready styles that blend elegance with simplicity.</p>
         </div>
       </div>
     </div>
@@ -139,6 +139,7 @@
       <button type="button" class="active" data-bs-target="#imgcarousel" data-bs-slide-to="0"></button>
       <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="1"></button>
       <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#imgcarousel" data-bs-slide-to="3"></button>
     </div>
   </section>
 
@@ -149,172 +150,90 @@
   
     <section class="row justify-content-center">
       <!-- Card 1 -->
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_1shirt.jpg') }}" class="card-img" alt="Stylish shirt">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Shirts</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Upgrade your wardrobe with the latest styles.</p>
-              <p class="card-text">Price $200</p>
+      <div class="container mt-5">
+        <h1 class="mb-4">Product List</h1>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                  <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
+                    <div class="position-relative zoom-effect">
+                        <img src="{{ product.image_url }}" class="card-img" alt="{{ product.name }}">
+                        <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
+                          <div>
+                
+                              <h2 class="card-title text-danger"> {{ product.product_name }}</h2>
+                              <p class="card-text">{{ product.product_desc }}</p>
+                              <p class="card-text">${{ product.product_price }}</p>
+                              <form method="POST" action="{{ url_for('add_to_cart') }}">
+                                <input type="hidden" name="product_id" value={{ product.id }}>
+                                <button class="btn btn-light text-dark mt-2">Add to Cart</button>
+                              </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
+            {% endfor %}
         </div>
       </div>
-  
-      <!-- Card 2 -->
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_2tro.jpg') }}" class="card-img" alt="Trousers">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Trousers</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Straight-Leg Pleated Linen Trousers</p>
-              <p class="card-text">Price $200</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Card 3 -->
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_3 shoe.jpg') }}" class="card-img" alt="Off Outfit">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Off Outfit</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Bold look for casual days.</p>
-              <p class="card-text">Price $200</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Card 4 -->
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_4.jpg') }}" class="card-img" alt="Casual Coat">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Men's Casual Fashion Coat</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Stylish outerwear for any occasion.</p>
-              <p class="card-text">Price $200</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Cards 5 to 8) -->
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_5.jpg') }}" class="card-img" alt="Shirts">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Shirts</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Trendy everyday shirt.</p>
-              <p class="card-text">Price $200</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_6.jpg') }}" class="card-img" alt="Shirts">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Shirts</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Simple and stylish.</p>
-              <p class="card-text">Price $200</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_7.jpg') }}" class="card-img" alt="Shirts">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Shirts</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Great for any occasion.</p>
-              <p class="card-text">Price $200</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
-      <div class="card col-lg-3 m-3 text-white" style="width: 400px;">
-        <div class="position-relative">
-          <img src="{{ url_for('static', filename='pic/pic_8.jpg') }}" class="card-img" alt="Shirts">
-          <div class="card-img-overlay d-flex flex-column justify-content-between text-center" style="background-color: rgba(0, 0, 0, 0.4);">
-            <div>
-              <h2 class="card-title text-danger">Shirts</h2>
-              <h6 class="card-subtitle">Awesome new arrivals</h6>
-              <p class="card-text">Elegant and modern.</p>
-              <p class="card-text">Price $260</p>
-            </div>
-            <button class="btn btn-light text-dark mt-2">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-  
+      
     </section>
   </main>
   {% endblock %}
 
 <!-- Features Section -->
-<section class="features py-5" style="background: linear-gradient(135deg, #f0f4f8, #d9e2ec);">
+<!-- Features Section -->
+<section class="features py-5" style="background: linear-gradient(135deg, #dfefff, #c8d4e1);">
   <div class="container">
-    <h3 class="text-center mb-5 fw-bold text-dark">Why Shop With Us?</h3>
+    <h3 class="text-center mb-5 fw-bold text-dark display-6">Why Shop With Us?</h3>
     <div class="row g-4 justify-content-center">
 
-      <div class="col-md-3">
-        <div class="feature-box p-4 bg-white rounded shadow-sm h-100 text-center">
-          <i class="bi bi-truck fs-1 mb-3 text-primary"></i>
+      <!-- Feature Box -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box p-4 bg-white rounded-4 shadow-sm h-100 text-center transition">
+          <div class="icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+            <i class="bi bi-truck fs-3 text-primary"></i>
+          </div>
           <h5 class="mb-2 fw-bold">Free Shipping</h5>
-          <p class="text-muted mb-0">On all orders over $300</p>
+          <p class="text-muted">On all orders over $300</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="feature-box p-4 bg-white rounded shadow-sm h-100 text-center">
-          <i class="bi bi-arrow-counterclockwise fs-1 mb-3 text-success"></i>
+      <!-- Feature Box -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box p-4 bg-white rounded-4 shadow-sm h-100 text-center transition">
+          <div class="icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+            <i class="bi bi-arrow-counterclockwise fs-3 text-success"></i>
+          </div>
           <h5 class="mb-2 fw-bold">Easy Returns</h5>
-          <p class="text-muted mb-0">Return policy of 30 days</p>
+          <p class="text-muted">Return policy of 30 days</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="feature-box p-4 bg-white rounded shadow-sm h-100 text-center">
-          <i class="bi bi-sliders fs-1 mb-3 text-warning"></i>
+      <!-- Feature Box -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box p-4 bg-white rounded-4 shadow-sm h-100 text-center transition">
+          <div class="icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+            <i class="bi bi-sliders fs-3 text-warning"></i>
+          </div>
           <h5 class="mb-2 fw-bold">Customizable</h5>
-          <p class="text-muted mb-0">Add your favorite features</p>
+          <p class="text-muted">Add your favorite features</p>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="feature-box p-4 bg-white rounded shadow-sm h-100 text-center">
-          <i class="bi bi-share fs-1 mb-3 text-danger"></i>
+      <!-- Feature Box: Follow Us -->
+      <div class="col-md-3 col-sm-6">
+        <div class="feature-box p-4 bg-white rounded-4 shadow-sm h-100 text-center transition">
+          <div class="icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+            <i class="bi bi-share fs-3 text-danger"></i>
+          </div>
           <h5 class="mb-3 fw-bold">Follow Us</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none text-primary" target="_blank">Facebook</a></li>
-            <li><a href="#" class="text-decoration-none text-primary" target="_blank">Twitter</a></li>
-            <li><a href="#" class="text-decoration-none text-primary" target="_blank">TikTok</a></li>
+            <li><a href="#" class="text-decoration-none text-primary">Facebook</a></li>
+            <li><a href="#" class="text-decoration-none text-primary">Twitter</a></li>
+            <li><a href="#" class="text-decoration-none text-primary">TikTok</a></li>
           </ul>
         </div>
       </div>
@@ -322,6 +241,7 @@
     </div>
   </div>
 </section>
+
 
 
 

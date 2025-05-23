@@ -78,28 +78,49 @@
 
   .navbar-custom{
     background-color: #003366;
+    height: 100px;
   }
 
   .navbar-custom .nav-link,
   .navbar-custom .navbar-brand
    {
     color: #709610 !important;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .navbar-custom .nav-link:hover,
   .navbar-custom .navbar-brand:hover {
     color: #ffcc00 !important;
   }
-
-
+  .feature-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
   .feature-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+  }
+
+  
+
+  .emptycart{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(233, 2, 2);
+    font-style: italic;
+  }
+  .zoom-effect {
+    overflow: hidden;
+  }
+
+  .zoom-effect img {
+    transition: transform 0.3s ease;
+  }
+
+  .zoom-effect:hover img {
+    transform: scale(1.1); /* Zoom in slightly */
   }
   
-  .feature-box ul li a:hover {
-    text-decoration: underline;
+  #imgcarousel .carousel-item img {
+    height: 900px;
+    object-fit: cover;
   }
-  
+

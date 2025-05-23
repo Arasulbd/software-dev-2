@@ -12,6 +12,8 @@ app.config['SECRET_KEY'] = os.urandom(24)
 
 db = SQLAlchemy(app)
 
+from flask_migrate import Migrate
+migrate = Migrate(app, db)
 # Models
 
 class User(db.Model):
@@ -29,10 +31,11 @@ class User(db.Model):
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100), nullable=False)
+    product_desc = db.Column(db.String(100), nullable=True)
+    image_url = db.Column(db.Text, nullable=True)
     product_price = db.Column(db.Float, nullable=False)
-   
-  
 
+  
 class CartItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
@@ -42,13 +45,14 @@ class CartItem(db.Model):
 
 
 with app.app_context():
+
     db.create_all()
     if Product.query.count() == 0:
         sample_products = [
-            Product(product_name='Shirts', product_price=200),
-            Product(product_name='Trousers', product_price=200),
-            Product(product_name='Off Outfit', product_price=200),
-            Product(product_name="Men's Casual Fashion Coat", product_price=200),
+            Product(product_name='Shirts', product_desc="This is a Shirt", image_url=" ", product_price=200),
+            Product(product_name='Trousers', product_desc="This is a Trouser", image_url=" ", product_price=200),
+            Product(product_name='Off Outfit', product_desc="This is an Off Outfit", image_url=" ", product_price=200),
+            Product(product_name="Men's Casual Fashion Coat", product_desc="This is a Fashion Coat", image_url=" ", product_price=200),
         ]
         db.session.bulk_save_objects(sample_products)
         db.session.commit()
@@ -65,7 +69,27 @@ def about():
     return render_template('about.html')
 @app.route('/base')
 def base():
-    return render_template('base.html')
+    products = Product.query.all()
+    return render_template('base.html', products=products)
+
+@app.route('/check_out', methods=['POST', 'GET'])
+def check_out():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        address = request.form['address']
+        
+        card = request.form['card']
+        expiry = request.form['expiry']
+        cvv = request.form['cvv']
+        if not all([name, email, address, card, expiry, cvv]):
+            flash('Please fill in all required fields.')
+            return redirect(url_for('check_out'))
+        flash('Order placed successfully! Thank you for shopping with us.')
+        session.pop('cart', None)  # clear the cart after successful checkout
+        return redirect(url_for('index'))
+      
+    return render_template('check_out.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -105,7 +129,7 @@ def logout():
     flash('Logged out.')
     return redirect(url_for('index'))
 
-
+'''
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     product_id = request.form.get('product_id')
@@ -114,7 +138,7 @@ def add_to_cart():
         flash('Invalid product ID')
         return redirect(url_for('index'))
 
-    product_id = str(product_id)  # Ensure session uses a string key
+    product_id = str(product_id)  
 
     cart = session.get('cart', {})
 
@@ -127,6 +151,66 @@ def add_to_cart():
     flash('Product added to cart')
     return redirect(url_for('index'))
 
+@app.route('/add_to_cart', methods=['POST'])
+def add_to_cart():
+    product_id = request.form.get('product_id')
+    action = request.form.get('action')  # Get the action from the form
+
+    if not product_id:
+        flash('Invalid product ID')
+        return redirect(url_for('cart'))
+
+    product_id = str(product_id)
+    cart = session.get('cart', {})
+
+    if action == 'increment':
+        cart[product_id] = cart.get(product_id, 0) + 1
+
+    elif action == 'decrement':
+        if product_id in cart:
+            cart[product_id] -= 1
+            if cart[product_id] <= 0:
+                del cart[product_id]
+
+    elif action == 'remove':
+        cart.pop(product_id, None)
+
+    else:
+        # Default to increment if no action is provided
+        cart[product_id] = cart.get(product_id, 0) + 1
+
+    session['cart'] = cart
+    flash(f'Cart updated: {action}')
+    return redirect(url_for('cart'))
+'''
+@app.route('/add_to_cart', methods=['POST'])
+def add_to_cart():
+    product_id = request.form.get('product_id')
+    action = request.form.get('action')
+
+    if not product_id:
+        flash('Invalid product ID')
+        return redirect(request.referrer or url_for('index'))
+
+    product_id = str(product_id)
+    cart = session.get('cart', {})
+
+    if action == 'increment':
+        cart[product_id] = cart.get(product_id, 0) + 1
+    elif action == 'decrement':
+        if product_id in cart:
+            cart[product_id] -= 1
+            if cart[product_id] <= 0:
+                del cart[product_id]
+    elif action == 'remove':
+        cart.pop(product_id, None)
+    else:
+        cart[product_id] = cart.get(product_id, 0) + 1
+
+    session['cart'] = cart
+    flash('Cart updated')
+    return redirect(request.referrer or url_for('index'))  
+
 
 
 @app.route('/cart')
@@ -136,7 +220,7 @@ def cart():
     total = 0
 
     for product_id, quantity in cart.items():
-        product = Product.query.get(int(product_id))  # convert to int here
+        product = Product.query.get(int(product_id)) 
         if product:
             subtotal = product.product_price * quantity
             total += subtotal
@@ -149,9 +233,7 @@ def cart():
     return render_template('cart.html', cart_items=cart_items, total=total) 
 
 
-    
 
-
-
+   
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

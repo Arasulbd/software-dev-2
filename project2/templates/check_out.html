@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4 text-primary">Checkout</h2>
+  <div class="p-4 shadow rounded" style="background-color: #cfe1f4;">
+    <form method="POST" action="{{ url_for('check_out') }}">
+      <div class="mb-3">
+        <label for="name" class="form-label text-secondary">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label text-secondary">Email Address</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="address" class="form-label text-secondary">Shipping Address</label>
+        <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="card" class="form-label text-secondary">Card Number</label>
+        <input type="text" class="form-control" id="card" name="card" placeholder="1234 5678 9012 3456" required>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label for="expiry" class="form-label text-secondary">Expiry Date</label>
+          <input type="text" class="form-control" id="expiry" name="expiry" placeholder="MM/YY" required>
+        </div>
+        <div class="col">
+          <label for="cvv" class="form-label text-secondary">CVV</label>
+          <input type="text" class="form-control" id="cvv" name="cvv" placeholder="123" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100">Place Order</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
