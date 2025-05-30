@@ -129,60 +129,7 @@ def logout():
     flash('Logged out.')
     return redirect(url_for('index'))
 
-'''
-@app.route('/add_to_cart', methods=['POST'])
-def add_to_cart():
-    product_id = request.form.get('product_id')
 
-    if not product_id:
-        flash('Invalid product ID')
-        return redirect(url_for('index'))
-
-    product_id = str(product_id)  
-
-    cart = session.get('cart', {})
-
-    if product_id in cart:
-        cart[product_id] += 1
-    else:
-        cart[product_id] = 1
-
-    session['cart'] = cart
-    flash('Product added to cart')
-    return redirect(url_for('index'))
-
-@app.route('/add_to_cart', methods=['POST'])
-def add_to_cart():
-    product_id = request.form.get('product_id')
-    action = request.form.get('action')  # Get the action from the form
-
-    if not product_id:
-        flash('Invalid product ID')
-        return redirect(url_for('cart'))
-
-    product_id = str(product_id)
-    cart = session.get('cart', {})
-
-    if action == 'increment':
-        cart[product_id] = cart.get(product_id, 0) + 1
-
-    elif action == 'decrement':
-        if product_id in cart:
-            cart[product_id] -= 1
-            if cart[product_id] <= 0:
-                del cart[product_id]
-
-    elif action == 'remove':
-        cart.pop(product_id, None)
-
-    else:
-        # Default to increment if no action is provided
-        cart[product_id] = cart.get(product_id, 0) + 1
-
-    session['cart'] = cart
-    flash(f'Cart updated: {action}')
-    return redirect(url_for('cart'))
-'''
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     product_id = request.form.get('product_id')
